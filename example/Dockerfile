@@ -7,12 +7,13 @@ RUN dart pub get
 
 COPY . .
 RUN dart pub get --offline &&\
-        dart compile exe bin/server.dart -o bin/server
+        dart pub add shelf &&\
+        dart compile exe example/shelf_docker_shutdown_example.dart -o server
 
 
 FROM scratch
 COPY --from=build /runtime/ /
-COPY --from=build /app/bin/server /bin/
+COPY --from=build /app/server /bin/
 
 ENV PORT 8080
 
