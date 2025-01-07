@@ -33,3 +33,7 @@ await server.closeOnTermSignal();
 ```
 
 See `example` folder for more details.
+
+## Links
+
+* [pub.dev](https://pub.dev/packages/shelf_docker_shutdown)
